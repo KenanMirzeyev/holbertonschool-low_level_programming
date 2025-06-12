@@ -5,13 +5,15 @@
  * Return: Always return 0
  *
  */
+	int n;
+
 int main(void)
 {
 	int n;
-
-	for(int n = 'a'; n <= 'z' ; n++)
+	for(n = 'a'; n <= 'z' ; n++)
 		{
 			putchar(n);
 		}
+	putchar('\n');
 	return(0);
 }
