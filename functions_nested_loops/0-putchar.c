@@ -1,13 +1,16 @@
-#include <stdio.h>
-#include <unistd.h>
-/**
- * main - Entry point
- *
- * Return: On success 0
- *
- */
+#include "main.h"
+
 int main(void)
 {
-	printf("_putchar\n");
+	char *str = "_putchar\n";
+	int i = 0;
+
+	while (str[i])
+	{
+		_putchar(str[i]);
+		i++;
+	}
+
 	return (0);
 }
+
