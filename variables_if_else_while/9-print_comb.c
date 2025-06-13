@@ -9,12 +9,16 @@ int main(void)
 {
 	int n;
 
-	for (n = '0' ; n <= '9' ; n++)
+	n = '0';
+
+	while (n < '9')
 	{
 		putchar (n);
 		putchar (',');
 		putchar (' ');
+		n++;
 	}
+	printf("9");
 	putchar ('\n');
 	return (0);
 }
