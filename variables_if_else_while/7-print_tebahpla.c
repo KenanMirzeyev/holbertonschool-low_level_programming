@@ -1,19 +1,22 @@
 #include <stdio.h>
 /**
- * main - Entry point
- *
- * Return: Always return 0
- *
- */
+  *main - prints alphabets in reverse
+  *
+  *Return: 0
+  *
+*/
 int main(void)
 {
 	int n;
 
-	for (n = 'z' ; n <= 'a' ; n++)
+	n = 'z';
+
+	while (n >= 'a')
 	{
-		putchar (n);
+		putchar(n);
+		n--;
 	}
-	putchar ('\n');
+	putchar('\n');
 	return (0);
 }
 
