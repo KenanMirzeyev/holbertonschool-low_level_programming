@@ -15,10 +15,10 @@ void print_square(int size)
 		return;
 	}
 
-	while (size < 2)
+	while (size < 3)
 	{
 		i = 0;
-		while (i < 2)
+		while (i < 3)
 		{
 			_putchar('#');
 			i++;
@@ -27,10 +27,10 @@ void print_square(int size)
 		_putchar('\n');
 		size++;
 	}
-	while (size < 10)
+	while (size < 9)
 	{
 		i = 0;
-		while (i < 10)
+		while (i < 9)
 		{
 			_putchar('#');
 			i++;
