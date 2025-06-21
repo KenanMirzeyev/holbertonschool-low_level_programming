@@ -22,7 +22,7 @@ char *_strncpy(char *dest, char *src, int n)
 			break;
 	}
 
-	for (; i <= n ; i++)
+	for (; i < n ; i++)
 
 		dest[i] = '\0';
 
