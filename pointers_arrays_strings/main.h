@@ -3,6 +3,7 @@
 
 void puts2(char *str);
 char *leet(char *);
+char *cap_string(char *);
 void puts_half(char *str);
 char *_strcat(char *dest, char *src);
 char *_strncat(char *dest, char *src, int n);
