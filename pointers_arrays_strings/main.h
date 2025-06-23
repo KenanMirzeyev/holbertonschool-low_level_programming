@@ -2,6 +2,7 @@
 #define MAIN_H
 
 void puts2(char *str);
+char *_memset(char *s, char b, unsigned int n);
 char *leet(char *);
 char *cap_string(char *);
 void puts_half(char *str);
