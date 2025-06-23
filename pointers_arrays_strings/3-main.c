@@ -8,12 +8,12 @@
  */
 int main(void)
 {
-	char s1[] = "Hello";
-	char s2[] = "World!";
-	int _strcmp(char *s1, char *s2);
+	char *s = "hello, world";
+	char *f = "oleh";
+	unsigned int n;
+	unsigned int _strspn(char *s, char *accept);
 
-	printf("%d\n", _strcmp(s1, s2));
-	printf("%d\n", _strcmp(s2, s1));
-	printf("%d\n", _strcmp(s1, s1));
+	n = _strspn(s, f);
+	printf("%u\n", n);
 	return (0);
 }
