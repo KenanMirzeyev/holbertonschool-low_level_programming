@@ -4,13 +4,12 @@
  * array_iterator - array
  * @array: array
  * @size: size
- * @actoin: action
- * @size_t: size
+ * @action: action
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	size_t i;
-	
+
 	if (array == NULL && action == NULL)
 	{
 		return;
