@@ -5,6 +5,7 @@
  * @array: array
  * @size: size
  * @actoin: action
+ * @size_t: size
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
