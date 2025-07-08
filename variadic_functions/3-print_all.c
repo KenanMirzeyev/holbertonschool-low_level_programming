@@ -39,7 +39,7 @@ void print_all(const char * const format, ...)
 			printf("%s%s", t, s);
 		}
 
-		if(format[r] == 'c' && format[r] == 'i' && format[r] == 'f' && format[r] == 's')
+		if(format[r] == 'c'|| format[r] == 'i' || format[r] == 'f' || format[r] == 's')
 		{
 			t = ", ";
 		}
