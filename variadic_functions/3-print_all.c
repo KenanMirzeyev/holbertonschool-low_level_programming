@@ -34,6 +34,7 @@ void print_float(va_list *args, char *sep)
 
 /**
  * print_string - Prints a string from the argument list
+ * struct print_type - s
  * @args: Pointer to va_list
  * @sep: Separator string to print before the value
  */
@@ -47,6 +48,7 @@ void print_string(va_list *args, char *sep)
 }
 /**
  * print_all - Prints any combination of char, int, float, and string
+ * struct print_type - type
  * @format: A string of format specifiers (c, i, f, s)
  */
 void print_all(const char * const format, ...)
