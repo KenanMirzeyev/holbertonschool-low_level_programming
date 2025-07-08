@@ -1,54 +1,72 @@
-#include <stdarg.h>
 #include <stdio.h>
+#include <stdarg.h>
 #include "variadic_functions.h"
 
+void print_char(va_list *args, char *sep)
+{
+	printf("%s%c", sep, va_arg(*args, int));
+}
+
+void print_int(va_list *args, char *sep)
+{
+	printf("%s%d", sep, va_arg(*args, int));
+}
+
+void print_float(va_list *args, char *sep)
+{
+	printf("%s%f", sep, va_arg(*args, double));
+}
+
+void print_string(va_list *args, char *sep)
+{
+	char *str = va_arg(*args, char *);
+	if (!str)
+		str = "(nil)";
+	printf("%s%s", sep, str);
+}
+
 /**
- * print_all - all
- * @format: form
+ * print_all - prints anything
+ * @format: list of types of arguments
  */
 void print_all(const char * const format, ...)
 {
-	va_list(args);
-	unsigned int r;
-	char *s;
-	char *t = "";
+	va_list args;
+	unsigned int i = 0, j;
+	char *separator = "";
+
+	struct print_type {
+		char symbol;
+		void (*print_func)(va_list *args, char *sep);
+	};
+
+	struct print_type types[] = {
+		{'c', print_char},
+		{'i', print_int},
+		{'f', print_float},
+		{'s', print_string},
+		{'\0', NULL}
+	};
 
 	va_start(args, format);
 
-	while (format && format[r])
+	while (format && format[i])
 	{
-		if (format[r] == 'c')
+		j = 0;
+		while (types[j].symbol)
 		{
-			printf("%s%c", t, va_arg(args, int));
-		}
-		if (format[r] == 'i')
-		{
-			printf("%s%i", t, va_arg(args, int));
-		}
-		if (format[r] == 'f')
-		{
-			printf("%s%f", t, (double)va_arg(args, double));
-		}
-		if (format[r] == 's')
-		{
-			s = va_arg(args, char *);
-			if (s == NULL)
+			if (format[i] == types[j].symbol)
 			{
-				s = "(nil)";
+				types[j].print_func(&args, separator);
+				separator = ", ";
+				break;
 			}
-			printf("%s%s", t, s);
+			j++;
 		}
-
-		if(format[r] == 'c'|| format[r] == 'i' || format[r] == 'f' || format[r] == 's')
-		{
-			t = ", ";
-		}
-		r++;
+		i++;
 	}
+
 	va_end(args);
 	printf("\n");
 }
-
-		
-
 
