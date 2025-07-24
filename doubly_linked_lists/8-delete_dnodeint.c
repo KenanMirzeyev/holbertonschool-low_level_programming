@@ -19,15 +19,19 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	c = *head;
 
 	if (index == 0)
+	{
 		*head = c->next;
 		if (head != NULL)
 			(*head)->prev = NULL;
 		free(c);
 		return (1);
+	}
 
 	while (c != NULL && a < index)
+	{
 		c = c->next;
 		a++;
+	}
 
 	while (c == NULL)
 		return (1);
